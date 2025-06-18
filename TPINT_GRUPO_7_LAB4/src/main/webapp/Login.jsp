@@ -44,7 +44,7 @@
 				<div class="card" style="max-width: 600px;">
 					<div class="cardbody m-3">
 						<h1 class="text-left mb-4">Inicio de sesión</h1>
-						<form class="row g-3 needs-validation" novalidate>
+						<form class="row g-3 needs-validation">
 							<div class="col-12">
 								<label for="idUser" class="form-label mt-1"> <b>
 										Usuario: </b>
