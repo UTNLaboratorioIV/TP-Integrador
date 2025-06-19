@@ -3,6 +3,8 @@
 	<name>TP-Integrador</name>
 	<comment></comment>
 	<projects>
+		<project>Servers</project>
+		<project>TPINT_GRUPO_7_LAB4</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

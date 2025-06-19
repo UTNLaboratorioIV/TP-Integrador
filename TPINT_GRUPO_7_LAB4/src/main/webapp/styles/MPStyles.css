@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+  nav {
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  footer {
+  padding: 50px;
+  background-color: #f0f0f0;
+  
+  }
+  
+  .py-extra {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.nav-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
