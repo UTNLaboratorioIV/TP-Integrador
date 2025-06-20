@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-    String username = (String) session.getAttribute("usuario_logueado"); // O reemplaza por tu lógica real
+    String username = (String) session.getAttribute("usuario_logueado");
     if (username == null) username = "Usuario";
 %>
 <!DOCTYPE html>
@@ -31,6 +31,18 @@
             color: white;
         }
     </style>
+    <script>
+        function validarPasswords() {
+            const nueva = document.getElementById("nuevoPassword").value;
+            const confirmar = document.getElementById("confirmarPassword").value;
+
+            if (nueva !== confirmar) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -40,14 +52,18 @@
             <h4><i class="fas fa-key"></i> Cambio de Password</h4>
         </div>
         <div class="card-body">
-            <form action="Usuario_GuardarPasswordEnSesion.jsp" method="post">
+            <form action="Usuario_GuardarPasswordEnSesion.jsp" method="post" onsubmit="return validarPasswords()">
                 <div class="mb-3">
                     <label class="form-label">Usuario:</label>
                     <input type="text" class="form-control" value="<%= username %>" disabled>
                 </div>
-                <div class="mb-4">
+                <div class="mb-3">
                     <label for="nuevoPassword" class="form-label">Nuevo Password:</label>
                     <input type="password" name="nuevoPassword" id="nuevoPassword" class="form-control" required>
+                </div>
+                <div class="mb-4">
+                    <label for="confirmarPassword" class="form-label">Confirmar Password:</label>
+                    <input type="password" name="confirmarPassword" id="confirmarPassword" class="form-control" required>
                 </div>
                 <div class="d-flex justify-content-between">
                     <a href="javascript:history.back()" class="btn btn-cancel">
