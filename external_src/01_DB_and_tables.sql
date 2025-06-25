@@ -23,6 +23,12 @@ CREATE TABLE Usuario (
     FOREIGN KEY (usuario_tipo_id) REFERENCES Usuario_Tipo(usuario_tipo_id)
 );
 
+-- Tabla: Provincia
+CREATE TABLE Provincia (
+    provincia_id INT AUTO_INCREMENT PRIMARY KEY,
+    provincia_nombre VARCHAR(50) NOT NULL UNIQUE
+);
+
 -- Tabla: Cliente
 CREATE TABLE Cliente (
     cliente_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -34,6 +40,7 @@ CREATE TABLE Cliente (
     cliente_email VARCHAR(100) NOT NULL,
     cliente_telefono VARCHAR(20),
     cliente_direccion VARCHAR(100),
+    cliente_estado BOOLEAN NOT NULL,
     provincia_id INT,
     localidad VARCHAR(50),
     FOREIGN KEY (usuario_id) REFERENCES Usuario(usuario_id),
@@ -129,13 +136,6 @@ CREATE TABLE Cuota (
     FOREIGN KEY (prestamo_id) REFERENCES Prestamo(prestamo_id),
     FOREIGN KEY (estado_cuota_id) REFERENCES Cuota_Estado(cuota_estado_id)
 );
-
--- Tabla: Provincia
-CREATE TABLE Provincia (
-    provincia_id INT AUTO_INCREMENT PRIMARY KEY,
-    provincia_nombre VARCHAR(50) NOT NULL UNIQUE
-);
-
 
 -- DATOS PRE-CARGADOS EN EL SISTEMA
 
