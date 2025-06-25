@@ -52,7 +52,7 @@ BEGIN
         u.usuario_estado AS Estado,
         ut.usuario_tipo_id_descripcion AS Tipo
     FROM Usuario u
-    J	OIN Usuario_Tipo ut ON u.usuario_tipo_id = ut.usuario_tipo_id
+		JOIN Usuario_Tipo ut ON u.usuario_tipo_id = ut.usuario_tipo_id
     WHERE u.usuario_nombre LIKE '%' || p_nombre || '%';
 END //
 DELIMITER ;
